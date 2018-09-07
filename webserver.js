@@ -9,10 +9,9 @@ const server = express();
 server.use(express.static(__dirname + '/html'));
 //make an endpoint to get data for all animals
 	//return the animals data
-server.get('/data/animals', (request, response)=>{
+server.get('/data', (request, response)=>{
 	console.log('got a request');
-	response.get(JSON.stringify(animals));
-	return animals;
+	response.send(JSON.stringify(animals));
 });
 //make the server listen for connections on port 3000
 server.listen(3000, ()=>{
